@@ -46,27 +46,28 @@ export const Mission: React.FC = () => {
             Nasza <span className="text-neon-yellow">Misja</span>
           </h2>
           <p className="max-w-2xl mx-auto text-gray-400 text-lg">
-            Przełamujemy stereotypy. Pokazujemy, że życie na trzeźwo to nie wyrzeczenie, ale upgrade do lepszej wersji rzeczywistości.
+            Współczesna młodzież stoi przed wyzwaniami, których skala jest bezprecedensowa. Alkohol, narkotyki i nadużywanie leków to nie tylko statystyki – to realne zagrożenie dla potencjału młodego pokolenia.
+            Misją <span className="text-neon-yellow">Pierwszego Trzeźwego Pokolenia</span> jest zmiana reguł gry Nie walczymy tylko zakazami. Edukujemy i uświadamiamy, aby opóźnić inicjację lub całkowicie wyeliminować środki psychoaktywne z życia młodych ludzi. Proponujemy coś znacznie ciekawszego niż chwilowy "haj"
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
           <MissionItem 
             icon={<Zap size={32} />}
-            title="Energia do Działania"
-            desc="Wspieramy pasje. Sport, muzyka, sztuka – dajemy narzędzia, by Twoja naturalna energia znalazła ujście w tworzeniu, nie niszczeniu."
+            title="Zdrowe, trzeźwe życie."
+            desc="Tworzymy środowisko, w którym bycie sobą wystarczy. Łączymy ludzi, którzy chcą od życia czegoś więcej"
             delay={0}
           />
           <MissionItem 
             icon={<Target size={32} />}
-            title="Czysty Cel"
+            title="Świadomy rozwój osobisty."
             desc="Budujemy świadomość. Edukujemy o mechanizmach uzależnień językiem faktów i nauki, a nie strachu i zakazów."
             delay={0.2}
           />
           <MissionItem 
             icon={<Heart size={32} />}
-            title="Wspólnota"
-            desc="Tworzymy środowisko, w którym bycie sobą wystarczy. Łączymy ludzi, którzy chcą od życia czegoś więcej niż chwilowy haj."
+            title="Budowanie charakteru poprzez sport i naukę."
+            desc=" Wspieramy pasje. Sport, muzyka, sztuka – dajemy narzędzia, by Twoja naturalna energia znalazła ujście w tworzeniu, nie niszczeniu."
             delay={0.4}
           />
         </div>

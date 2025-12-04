@@ -57,10 +57,10 @@ export const Programs: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-xl">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-              Nasze <span className="text-neon-yellow">Programy</span>
+              Realne działania<span className="text-neon-yellow">, realne zmiany.</span>
             </h2>
             <p className="text-gray-400">
-              Działamy wielotorowo. Od warsztatów w szkołach, przez wsparcie online, aż po eventy sportowe.
+              Realizuje Naszą misję poprzez trzy strategiczne filary.
             </p>
           </div>
           <button className="px-6 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-colors text-white font-medium interactive">
@@ -71,20 +71,20 @@ export const Programs: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <ProgramCard 
             category="Edukacja"
-            title="Warsztaty Świadomości"
-            description="Interaktywne spotkania w szkołach, gdzie rozkładamy mity o używkach na czynniki pierwsze."
+            title="Liceum Columbus"
+            description="Szkoła inna niż wszystkie. Miejsce, gdzie edukacja akademicka spotyka się z formacją charakteru. Kształcimy przyszłe elity w oparciu o wartości."
             gradient="from-neon-yellow to-orange-500"
           />
           <ProgramCard 
-            category="Sport"
-            title="Liga Czystej Gry"
-            description="Ogólnopolskie turnieje piłkarskie i e-sportowe. Adrenalina bez chemii."
+            category="Mentoring"
+            title="The Grade Trójmiasto"
+            description="Program mentoringowy dla chłopców, który kształtuje męstwo, odpowiedzialność i umiejętności liderskie. Pomagamy im stawać się mężczyznami, na których można polegać."
             gradient="from-neon-blue to-cyan-600"
           />
           <ProgramCard 
             category="Wsparcie"
-            title="Strefa Rodzica"
-            description="Webinary i grupy wsparcia dla rodziców, którzy chcą lepiej rozumieć świat swoich dzieci."
+            title="Pierwsze Trzeźwe Pokolenie"
+            description='Nasza wizytówka i cel nadrzędny. Kampania społeczna i edukacyjna promująca modę na życie bez "wspomagaczy".'
             gradient="from-neon-purple to-pink-600"
           />
         </div>

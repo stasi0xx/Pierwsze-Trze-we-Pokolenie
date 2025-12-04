@@ -60,101 +60,97 @@ export const About: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Intro Section */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              Więcej niż <span className="text-neon-yellow">Fundacja</span>.<br/>
-              To Kolektyw.
-            </h2>
-            <div className="space-y-6 text-lg text-gray-400">
-              <p>
-                PTP powstało z buntu. Buntu przeciwko nudnym pogadankom w szkole i buntu przeciwko presji rówieśników, że "trzeba brać, żeby się bawić".
-              </p>
-              <p>
-                Jesteśmy grupą przyjaciół – sportowców, artystów, gamerów – którzy udowadniają, że najlepszy haj to ten naturalny. Tworzymy przestrzeń, gdzie bycie sobą jest najważniejszą walutą.
-              </p>
-            </div>
 
-            <div className="mt-8 flex gap-8">
-              <div>
-                <span className="block text-4xl font-bold text-white mb-1">5+</span>
-                <span className="text-sm text-gray-500 uppercase tracking-widest">Lat Działania</span>
-              </div>
-              <div>
-                <span className="block text-4xl font-bold text-white mb-1">12k</span>
-                <span className="text-sm text-gray-500 uppercase tracking-widest">Uczestników</span>
-              </div>
-              <div>
-                <span className="block text-4xl font-bold text-white mb-1">50+</span>
-                <span className="text-sm text-gray-500 uppercase tracking-widest">Wydarzeń</span>
-              </div>
-            </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-             <div className="aspect-video rounded-3xl overflow-hidden border border-white/10 relative group">
-                <img 
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
-                    alt="Team meeting" 
-                    className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-neon-yellow/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-             </div>
-             {/* Decor */}
-             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-stripes-white opacity-10 rounded-xl" />
-          </motion.div>
-        </div>
 
         {/* Team Grid */}
-        <div className="mb-12">
-            <h3 className="text-3xl font-display font-bold mb-10 border-l-4 border-neon-yellow pl-6">
-                Poznaj Mentorów
-            </h3>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <TeamMember 
-                    name="Alex"
-                    role="Trener Personalny"
-                    icon={<Activity size={18} />}
-                    image="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop"
-                    desc="Pokazuje, jak przekuć frustrację w siłę fizyczną. Bez drogi na skróty."
-                    delay={0}
-                />
-                <TeamMember 
-                    name="Zuza"
-                    role="DJ & Producent"
-                    icon={<Music size={18} />}
-                    image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop"
-                    desc="Muzyka to jej narkotyk. Uczy produkcji dźwięku i wyrażania emocji beatem."
-                    delay={0.1}
-                />
-                <TeamMember 
-                    name="Tomek"
-                    role="Psycholog Sportu"
-                    icon={<Users size={18} />}
-                    image="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1000&auto=format&fit=crop"
-                    desc="Spec od mindsetu. Uczy, jak wygrywać w głowie, zanim wejdziesz na boisko."
-                    delay={0.2}
-                />
-                 <TeamMember 
-                    name="Marta"
-                    role="Influencerka"
-                    icon={<Mic size={18} />}
-                    image="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop"
-                    desc="Prowadzi warsztaty z budowania pewności siebie w social mediach bez hejtu."
-                    delay={0.3}
-                />
-            </div>
-        </div>
+
+          <div className="mb-24">
+              <h3 className="text-3xl font-display font-bold mb-10 border-l-4 border-neon-yellow pl-6">
+                  Lider i Mentor
+              </h3>
+
+              <div className="flex flex-col lg:flex-row gap-12 items-start">
+                  {/* Image Section */}
+                  <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      className="w-full lg:w-2/5 h-[600px] relative rounded-3xl overflow-hidden group shadow-2xl shadow-neon-yellow/5"
+                  >
+                      <img
+                          src="/Bartłomej.jpg"
+                          alt="Bartłomiej Glinka"
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale-[10%] group-hover:grayscale-0"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent opacity-90" />
+
+                      <div className="absolute bottom-8 left-8 right-8">
+                          <div className="flex items-center gap-3 mb-4">
+                              <div className="p-2 bg-neon-yellow text-charcoal rounded-lg">
+                                  <Activity size={24} />
+                              </div>
+                              <span className="text-neon-yellow font-bold uppercase tracking-wider text-xs border border-neon-yellow/30 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md">
+                              Założyciel
+                            </span>
+                          </div>
+                          <h3 className="text-4xl font-display font-bold text-white mb-2">Bartłomiej Glinka</h3>
+                          <p className="text-gray-400 text-sm font-mono uppercase tracking-widest">Przedsiębiorca • Sportowiec • Filantrop</p>
+                      </div>
+                  </motion.div>
+
+                  {/* Content Section */}
+                  <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      className="w-full lg:w-3/5 space-y-8"
+                  >
+                      <div>
+                          <h4 className="text-3xl font-bold text-white mb-4 leading-tight">
+                              Sukces rodzi się z dyscypliny, <span className="text-neon-yellow">nie z używek.</span>
+                          </h4>
+                          <p className="text-gray-300 text-lg leading-relaxed">
+                              Mąż i ojciec trójki dzieci (w tym dwojga licealistów), który łączy życie rodzinne z biznesem na najwyższym poziomie. Współzałożyciel <span className="text-white font-semibold">Omida Group</span> – spółki logistycznej z przychodami przekraczającymi <span className="text-neon-yellow">1 mld PLN</span>.
+                          </p>
+                      </div>
+
+                      <div className="grid sm:grid-cols-2 gap-5">
+                          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-neon-yellow/30 transition-all hover:bg-white/10">
+                              <div className="flex items-center gap-2 mb-3">
+                                  <Award className="text-neon-yellow" size={20}/>
+                                  <h5 className="text-white font-bold">Edukacja & Ekspertyza</h5>
+                              </div>
+                              <p className="text-gray-400 text-sm leading-relaxed">
+                                  Absolwent UG, MBA oraz AMP na prestiżowej <span className="text-gray-300">IESE Business School</span> w Barcelonie. Członek Rady Ekspertów i Rady Zarządzającej UG (2021-2025).
+                              </p>
+                          </div>
+                          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-neon-yellow/30 transition-all hover:bg-white/10">
+                              <div className="flex items-center gap-2 mb-3">
+                                  <Activity className="text-neon-yellow" size={20}/>
+                                  <h5 className="text-white font-bold">Sport & Charakter</h5>
+                              </div>
+                              <p className="text-gray-400 text-sm leading-relaxed">
+                                  Maratończyk i multisportowiec. Udowadnia, że wytrwałość wytrenowana w sporcie jest kluczem do sukcesów w biznesie i życiu prywatnym.
+                              </p>
+                          </div>
+                      </div>
+
+                      <div className="relative pl-8 border-l-2 border-neon-yellow/50 py-2">
+                          <p className="text-gray-300 italic mb-3 text-lg">
+                              "Naszą misją jest opóźnienie inicjacji lub całkowita rezygnacja ze środków zmieniających świadomość. Dajemy alternatywę: zdrowe, świadome, trzeźwe życie oparte na rozwoju."
+                          </p>
+                          <div className="flex gap-3 text-xs font-bold text-gray-500 uppercase tracking-widest mt-4">
+                              <span>Liceum Columbus</span>
+                              <span className="text-neon-yellow">•</span>
+                              <span>The Grade</span>
+                              <span className="text-neon-yellow">•</span>
+                              <span>PTP</span>
+                          </div>
+                      </div>
+                  </motion.div>
+              </div>
+          </div>
 
       </div>
     </section>

@@ -21,21 +21,21 @@ export const Hero: React.FC = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neon-yellow text-xs font-bold uppercase tracking-wider mb-6">
             <Sparkles size={12} />
-            <span>Przyszłość jest jasna</span>
+            <span>Świadome Życie.</span>
           </div>
           
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 text-white">
-            Wybierz <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-yellow to-neon-blue">Czystą</span> Ścieżkę.
+            Trzeźwa <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-yellow to-neon-blue">Przyszłość Liderzy</span> Jutra.
           </h1>
           
           <p className="text-gray-400 text-lg md:text-xl mb-8 max-w-lg leading-relaxed">
-            Nie walczymy ze starym, budujemy nowe. Pierwsze Trzeźwe Pokolenie to społeczność pasji, energii i nieograniczonych możliwości.
+              W świecie pełnym uzależnień dajemy młodym ludziom kompas. Zamiast używek oferujemy pasję, rozwój i drogę do sukcesu.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="interactive group relative px-8 py-4 bg-neon-yellow text-charcoal font-bold text-lg rounded-xl overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(244,255,0,0.4)]">
               <span className="relative z-10 flex items-center gap-2">
-                Dołącz do Ruchu <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                Dołącz do Nas <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-white/40 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
