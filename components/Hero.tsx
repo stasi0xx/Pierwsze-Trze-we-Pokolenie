@@ -77,6 +77,14 @@ export const Hero: React.FC = () => {
 
 // Replaced Abstract EnergyCore with a Photo Composition
 const HeroVisual: React.FC = () => {
+    // Dane do plakietek, żeby łatwiej zarządzać ich pozycją i treścią
+    const badges = [
+        { text: "Energii", top: "10%", delay: 0 },
+        { text: "Sukcesu", top: "32%", delay: 1.5 },
+        { text: "Wiary", top: "54%", delay: 3 },
+        { text: "Miłości", top: "76%", delay: 0.5 },
+    ];
+
     return (
         <div className="relative w-full h-full flex items-center justify-center perspective-1000">
 
@@ -103,19 +111,36 @@ const HeroVisual: React.FC = () => {
 
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-80" />
-
-                {/* Floating Badge on Image */}
-
             </motion.div>
 
-            {/* Floating Neon Elements */}
+            {/* Floating Neon Elements (Glow effect) */}
             <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-4 -right-4 w-24 h-24 bg-neon-yellow/20 rounded-full blur-xl z-0"
             />
 
-
+            {/* Floating Badges - Generowane z tablicy dla równych odstępów */}
+            {badges.map((badge, index) => (
+                <motion.div
+                    key={badge.text}
+                    // Ustawiamy dynamiczny top na podstawie danych
+                    style={{ top: badge.top }}
+                    className="absolute -left-6 bg-charcoal p-3 rounded-lg border border-neon-yellow/30 shadow-[0_0_20px_rgba(244,255,0,0.15)] z-20"
+                    // Animacja x (lewo-prawo)
+                    animate={{ x: [0, 10, 0] }}
+                    // Dodajemy delay, żeby każdy element ruszał się w innym momencie
+                    transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: badge.delay
+                    }}
+                >
+                    <span className="text-neon-yellow font-bold text-xl font-display">100%</span>
+                    <span className="block text-white text-xs">{badge.text}</span>
+                </motion.div>
+            ))}
         </div>
     );
 };
