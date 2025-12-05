@@ -111,7 +111,7 @@ export const About: React.FC = () => {
                               Sukces rodzi się z dyscypliny, <span className="text-neon-yellow">nie z używek.</span>
                           </h4>
                           <p className="text-gray-300 text-lg leading-relaxed">
-                              <span className="text-neon-yellow">Mąż</span> i <span className="text-neon-yellow">ojciec</span> trójki <span className="text-neon-yellow">dzieci</span> (w tym dwojga licealistów), który łączy życie rodzinne z biznesem na najwyższym poziomie. Współzałożyciel <span className="text-white font-semibold">Omida Group</span> – spółki logistycznej z przychodami przekraczającymi <span className="text-neon-yellow">1 mld PLN</span>.
+                              <span className="text-neon-yellow">Mąż</span> i <span className="text-neon-yellow">ojciec</span> trójki <span className="text-neon-yellow">dzieci</span> (w tym dwojga licealistów), który łączy życie rodzinne z biznesem na najwyższym poziomie. Współzałożyciel <a href={"https://omida.pl/"} target={"_blank"}><span className="text-white font-semibold">Omida Group</span></a> – spółki logistycznej z przychodami przekraczającymi <span className="text-neon-yellow">1 mld PLN</span>.
                           </p>
                       </div>
 

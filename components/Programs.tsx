@@ -101,7 +101,7 @@ export const Programs: React.FC = () => {
             />
             <ProgramCard
                 category="Wsparcie"
-                title="Pierwsze Trzeźwe Pokolenie"
+                title="Fundacja Comlubus"
                 description='Nasza wizytówka i cel nadrzędny. Kampania społeczna i edukacyjna promująca modę na życie bez "wspomagaczy".'
                 gradient="from-neon-purple to-pink-600"
                 image="/fundacja.webp"

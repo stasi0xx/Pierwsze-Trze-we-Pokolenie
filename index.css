@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+    --color-charcoal: #121212;
+    --color-charcoal-light: #1E1E1E;
+
+    /* Neon Colors */
+    --color-neon-yellow: #F4FF00;
+    --color-neon-blue: #00F0FF;
+    --color-neon-purple: #BC13FE;
+    --color-neon-green: #39FF14;
+
+    /* Glass Colors */
+    --color-glass-white: rgba(255, 255, 255, 0.1);
+    --color-glass-dark: rgba(0, 0, 0, 0.3);
+    --color-glass-border: rgba(255, 255, 255, 0.2);
+
+    /* Fonts */
+    --font-sans: 'Inter', sans-serif;
+    --font-display: 'Space Grotesk', sans-serif;
+
+    /* Animations */
+    --animate-blob: blob 7s infinite;
+
+    @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -50px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+        100% { transform: translate(0px, 0px) scale(1); }
+    }
+}
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background-color: var(--color-charcoal); /* Używamy zmiennej zdefiniowanej wyżej */
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Custom Classes */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(244, 255, 0, 0.15);
+}
+
+/* Utility for interactive elements */
+.interactive {
+    cursor: pointer;
+}
