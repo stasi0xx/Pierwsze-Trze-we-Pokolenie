@@ -100,7 +100,7 @@ const HeroVisual: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="relative z-10 w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 group mt-5"
+                className="relative z-10 w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 group mt-10"
             >
                 {/* The Image */}
                 <img
