@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
                             className="interactive group relative px-8 py-4 bg-neon-yellow text-charcoal font-bold text-lg rounded-xl overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(244,255,0,0.4)] text-center flex items-center justify-center"
                         >
                             <span className="relative z-10 flex items-center gap-2">
-                                Dołącz do Nas
+                                Dołącz do Ruchu
                             </span>
                             <div className="absolute inset-0 bg-white/40 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                         </a>
