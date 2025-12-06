@@ -16,11 +16,12 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'O Nas', href: '#about' },
-    { name: 'Misja', href: '#mission' },
-    { name: 'Programy', href: '#programs' },
-    { name: 'Historie', href: '#stories' },
-    { name: 'Wsparcie', href: '#donate' },
+    {name: 'Lista Szkół Partnerskich', href: '/szkoly'},
+      { name: 'O Nas', href: '/#about' },
+    { name: 'Misja', href: '/#mission' },
+    { name: 'Programy', href: '/#programs' },
+    { name: 'Historie', href: '/#stories' },
+    { name: 'Wsparcie', href: '/#donate' },
   ];
 
   return (
@@ -31,7 +32,7 @@ export const Navbar: React.FC = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center pt-2">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group interactive">
+          <a href="/" className="flex items-center gap-2 group interactive">
             <img
                 src="/logo (2).png"
                 alt="Pierwsze Trzeźwe Pokolenie"
@@ -54,7 +55,7 @@ export const Navbar: React.FC = () => {
                 </a>
             ))}
             <a
-                href="#donate"
+                href="/dolacz"
                 className="px-6 py-2 rounded-full bg-white/10 hover:bg-neon-yellow hover:text-charcoal border border-white/20 hover:border-neon-yellow transition-all duration-300 font-semibold text-sm interactive"
             >
               Dołącz
@@ -91,7 +92,7 @@ export const Navbar: React.FC = () => {
                       </a>
                   ))}
                   <a
-                      href="#donate"
+                      href="/dolacz"
                       className="mt-2 text-center px-6 py-3 rounded-xl bg-neon-yellow text-charcoal font-bold"
                       onClick={() => setIsMobileOpen(false)}
                   >
