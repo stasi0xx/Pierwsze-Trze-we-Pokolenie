@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import {Link} from "react-router-dom";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +33,7 @@ export const Navbar: React.FC = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center pt-2">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group interactive">
+          <Link to="/" className="flex items-center gap-2 group interactive">
             <img
                 src="/logo (2).png"
                 alt="Pierwsze Trzeźwe Pokolenie"
@@ -40,26 +41,26 @@ export const Navbar: React.FC = () => {
                     isScrolled ? 'h-12 md:h-16' : 'h-16 md:h-20'
                 }`}
             />
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-                <a
+                <Link
                     key={link.name}
-                    href={link.href}
+                    to={link.href}
                     className="text-sm font-medium text-gray-300 hover:text-white relative group interactive"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-yellow transition-all group-hover:w-full"></span>
-                </a>
+                </Link>
             ))}
-            <a
-                href="/dolacz"
+            <Link
+                 to="/dolacz"
                 className="px-6 py-2 rounded-full bg-white/10 hover:bg-neon-yellow hover:text-charcoal border border-white/20 hover:border-neon-yellow transition-all duration-300 font-semibold text-sm interactive"
             >
               Dołącz
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}

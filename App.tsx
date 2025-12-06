@@ -9,6 +9,7 @@ import { SchoolsPage } from './pages/SchoolsPage';
 import {JoinUsPage} from "@/pages/JoinUsPage.tsx";
 import {PrivacyPolicyPage} from "@/pages/PrivacyPolicyPage.tsx";
 import {RegulationsPage} from "@/pages/RegulatoinsPage.tsx";
+import {CookieConsent} from "@/components/CookieConsent.tsx";
 
 // Komponent pomocniczy do przewijania na górę przy zmianie strony
 const ScrollToTop = () => {
@@ -43,7 +44,7 @@ const App: React.FC = () => {
             <div className="relative min-h-screen selection:bg-neon-yellow selection:text-charcoal bg-charcoal">
                 <MouseFollower />
                 <Navbar />
-
+                <CookieConsent />
                 <main className="flex flex-col gap-0">
                     <Routes>
                         <Route path="/" element={<Home />} />

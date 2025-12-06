@@ -15,7 +15,6 @@ export const Home: React.FC = () => {
             <About />
             <Programs />
             <Stories />
-            <Donate />
         </>
     );
 };

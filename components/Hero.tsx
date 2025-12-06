@@ -1,19 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-charcoal">
-            {/* Dark overlay to ensure background is deep dark if blobs are too bright */}
+        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-32 pb-16 bg-charcoal">
+            {/* Dark overlay */}
             <div className="absolute inset-0 bg-charcoal/50 z-0" />
 
-            {/* Dynamic Background Gradients */}
+            {/* Background Gradients */}
             <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-neon-yellow/5 rounded-full blur-[100px] animate-blob mix-blend-screen pointer-events-none" />
             <div className="absolute top-[20%] right-[-10%] w-[400px] h-[400px] bg-neon-blue/10 rounded-full blur-[100px] animate-blob animation-delay-2000 mix-blend-screen pointer-events-none" />
             <div className="absolute bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[120px] animate-blob animation-delay-4000 mix-blend-screen pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            {/* ZMIANA: Zwiększony gap na mobile (gap-12 -> gap-16) dla wyraźnego odstępu */}
+            <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-16 md:gap-12 items-center">
 
                 {/* Text Content */}
                 <motion.div
@@ -27,11 +29,11 @@ export const Hero: React.FC = () => {
                         <span>Świadome Życie.</span>
                     </div>
 
-                    <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 text-white">
+                    <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-white">
                         Trzeźwa <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-yellow to-neon-blue">Przyszłość Liderzy</span> Jutra.
                     </h1>
 
-                    <p className="text-gray-400 text-lg md:text-xl mb-8 max-w-lg leading-relaxed">
+                    <p className="text-gray-400 text-base md:text-xl mb-8 max-w-lg leading-relaxed">
                         W świecie pełnym uzależnień dajemy młodym ludziom kompas. Zamiast używek oferujemy pasję, rozwój i drogę do sukcesu.
                     </p>
 
@@ -42,20 +44,21 @@ export const Hero: React.FC = () => {
                         >
                             Poznaj Misję
                         </a>
-                        <a
-                            href="#donate"
+                        <Link
+                            to="/dolacz"
                             className="interactive group relative px-8 py-4 bg-neon-yellow text-charcoal font-bold text-lg rounded-xl overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(244,255,0,0.4)] text-center flex items-center justify-center"
                         >
                             <span className="relative z-10 flex items-center gap-2">
                                 Dołącz do Ruchu
                             </span>
                             <div className="absolute inset-0 bg-white/40 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                        </a>
+                        </Link>
                     </div>
                 </motion.div>
 
                 {/* Hero Image Composition */}
-                <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
+                {/* ZMIANA: h-auto na mobile zamiast sztywnego h-[300px], mt-8 dla dodatkowego odstępu */}
+                <div className="relative h-auto md:h-[600px] flex items-center justify-center mt-8 md:mt-0">
                     <HeroVisual />
                 </div>
             </div>
@@ -65,7 +68,7 @@ export const Hero: React.FC = () => {
                 initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 10 }}
                 transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500"
+                className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500"
             >
                 <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center pt-2">
                     <div className="w-1 h-2 bg-neon-yellow rounded-full" />
@@ -75,72 +78,83 @@ export const Hero: React.FC = () => {
     );
 };
 
-// Replaced Abstract EnergyCore with a Photo Composition
 const HeroVisual: React.FC = () => {
-    // Dane do plakietek, żeby łatwiej zarządzać ich pozycją i treścią
+    // Definicja elementów orbity: tekst + kąt startowy
     const badges = [
-        { text: "Energii", top: "10%", delay: 0 },
-        { text: "Sukcesu", top: "32%", delay: 1.5 },
-        { text: "Wiary", top: "54%", delay: 3 },
-        { text: "Miłości", top: "76%", delay: 0.5 },
+        { text: "Energii", initialAngle: 0 },
+        { text: "Sukcesu", initialAngle: 90 },
+        { text: "Wiary", initialAngle: 180 },
+        { text: "Miłości", initialAngle: 270 },
     ];
 
     return (
         <div className="relative w-full h-full flex items-center justify-center perspective-1000">
 
-            {/* Decorative Circles behind */}
+            {/* Dekoracyjne okręgi w tle - UKRYTE NA MOBILE (hidden md:block) */}
             <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="absolute w-[110%] h-[110%] border border-neon-yellow/10 rounded-full border-dashed"
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                className="hidden md:block absolute w-[130%] h-[130%] md:w-[120%] md:h-[120%] border border-neon-yellow/10 rounded-full border-dashed pointer-events-none"
             />
 
-            {/* Main Image Container */}
+            {/* Kontener ze zdjęciem */}
             <motion.div
-                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="relative z-10 w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 group mt-10"
+                // ZMIANA: Zmniejszono szerokość na mobile do 'w-60', aby orbita mogła być mniejsza
+                className="relative z-10 w-60 md:w-full md:max-w-md h-auto rounded-3xl overflow-hidden border border-white/10 group shadow-2xl shadow-neon-yellow/10"
             >
-                {/* The Image */}
                 <img
-                    src="/grafikaHero.webp"
-                    alt="Happy group of diverse teenagers in urban setting"
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 filter grayscale-[20%]"
+                    src="/grafikaHero.png"
+                    alt="Happy group"
+                    className="w-full h-auto block opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 filter grayscale-[20%]"
                 />
-
-                {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-80" />
+
+
+
             </motion.div>
 
-            {/* Floating Neon Elements (Glow effect) */}
-            <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 w-24 h-24 bg-neon-yellow/20 rounded-full blur-xl z-0"
-            />
 
-            {/* Floating Badges - Generowane z tablicy dla równych odstępów */}
-            {badges.map((badge, index) => (
-                <motion.div
-                    key={badge.text}
-                    // Ustawiamy dynamiczny top na podstawie danych
-                    style={{ top: badge.top }}
-                    className="absolute -left-6 bg-charcoal p-3 rounded-lg border border-neon-yellow/30 shadow-[0_0_20px_rgba(244,255,0,0.15)] z-20"
-                    // Animacja x (lewo-prawo)
-                    animate={{ x: [0, 10, 0] }}
-                    // Dodajemy delay, żeby każdy element ruszał się w innym momencie
-                    transition={{
-                        duration: 5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: badge.delay
-                    }}
-                >
-                    <span className="text-neon-yellow font-bold text-xl font-display">100%</span>
-                    <span className="block text-white text-xs">{badge.text}</span>
-                </motion.div>
-            ))}
+
+            {/* Kontener Orbity */}
+            <motion.div
+                className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            >
+                {badges.map((badge) => (
+                    <motion.div
+                        key={badge.text}
+                        className="absolute"
+                        style={{
+                            transform: `rotate(${badge.initialAngle}deg) translateY(var(--orbit-radius)) rotate(-${badge.initialAngle}deg)`
+                        }}
+                    >
+                        <motion.div
+                            className="bg-charcoal/90 backdrop-blur-md p-2 md:p-4 rounded-xl border border-neon-yellow/30 shadow-[0_0_15px_rgba(244,255,0,0.15)] flex flex-col items-center min-w-[70px] md:min-w-[90px]"
+                            animate={{ rotate: -360 }}
+                            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                        >
+                            <span className="text-neon-yellow font-bold text-base md:text-xl font-display leading-none">100%</span>
+                            <span className="text-white text-[9px] md:text-xs font-medium uppercase tracking-wide mt-1">{badge.text}</span>
+                        </motion.div>
+                    </motion.div>
+                ))}
+            </motion.div>
+
+            <style>{`
+                :root {
+                    /* ZMIANA: Mniejszy promień orbity na mobile (-160px) pasujący do w-60 */
+                    --orbit-radius: -160px;
+                }
+                @media (min-width: 768px) {
+                    :root {
+                        --orbit-radius: -280px; 
+                    }
+                }
+            `}</style>
         </div>
     );
 };
