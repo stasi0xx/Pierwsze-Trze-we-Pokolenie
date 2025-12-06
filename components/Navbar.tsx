@@ -1,12 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import {Link} from "react-router-dom";
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,13 +18,41 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    {name: 'Lista Szkół Partnerskich', href: '/szkoly'},
-      { name: 'O Nas', href: '/#about' },
+    { name: 'Lista Szkół Partnerskich', href: '/szkoly' },
     { name: 'Misja', href: '/#mission' },
+    { name: 'O Nas', href: '/#about' },
     { name: 'Programy', href: '/#programs' },
     { name: 'Historie', href: '/#stories' },
-    { name: 'Wsparcie', href: '/#donate' },
   ];
+
+  // Ta funkcja naprawia scrollowanie
+  const handleNavClick = (href: string) => {
+    setIsMobileOpen(false); // Zamykamy menu mobilne od razu
+
+    if (href.startsWith('/#')) {
+      // Jeśli to link z kotwicą (np. /#about)
+      const id = href.replace('/#', '');
+
+      if (location.pathname === '/') {
+        // SCENARIUSZ 1: Jesteśmy już na Home -> scrollujemy natychmiast
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // SCENARIUSZ 2: Jesteśmy na innej stronie -> idziemy do Home
+        // (useEffect w Home.tsx obsłuży scrollowanie po załadowaniu)
+        navigate('/');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      // SCENARIUSZ 3: Zwykła nawigacja do podstrony (np. /szkoly)
+      navigate(href);
+    }
+  };
 
   return (
       <nav
@@ -32,8 +61,14 @@ export const Navbar: React.FC = () => {
           }`}
       >
         <div className="container mx-auto px-6 flex justify-between items-center pt-2">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group interactive">
+          {/* Logo - zawsze wraca na górę strony głównej */}
+          <Link
+              to="/"
+              onClick={() => {
+                if(location.pathname === '/') window.scrollTo({top: 0, behavior: 'smooth'});
+              }}
+              className="flex items-center gap-2 group interactive"
+          >
             <img
                 src="/logo (2).png"
                 alt="Pierwsze Trzeźwe Pokolenie"
@@ -46,17 +81,17 @@ export const Navbar: React.FC = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-                <Link
+                <button
                     key={link.name}
-                    to={link.href}
-                    className="text-sm font-medium text-gray-300 hover:text-white relative group interactive"
+                    onClick={() => handleNavClick(link.href)}
+                    className="text-sm font-medium text-gray-300 hover:text-white relative group interactive cursor-pointer bg-transparent border-none p-0"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-yellow transition-all group-hover:w-full"></span>
-                </Link>
+                </button>
             ))}
             <Link
-                 to="/dolacz"
+                to="/dolacz"
                 className="px-6 py-2 rounded-full bg-white/10 hover:bg-neon-yellow hover:text-charcoal border border-white/20 hover:border-neon-yellow transition-all duration-300 font-semibold text-sm interactive"
             >
               Dołącz
@@ -83,22 +118,21 @@ export const Navbar: React.FC = () => {
               >
                 <div className="flex flex-col p-6 gap-4">
                   {navLinks.map((link) => (
-                      <a
+                      <button
                           key={link.name}
-                          href={link.href}
-                          className="text-lg font-medium text-gray-300 hover:text-neon-yellow"
-                          onClick={() => setIsMobileOpen(false)}
+                          onClick={() => handleNavClick(link.href)}
+                          className="text-left text-lg font-medium text-gray-300 hover:text-neon-yellow bg-transparent border-none p-0"
                       >
                         {link.name}
-                      </a>
+                      </button>
                   ))}
-                  <a
-                      href="/dolacz"
-                      className="mt-2 text-center px-6 py-3 rounded-xl bg-neon-yellow text-charcoal font-bold"
+                  <Link
+                      to="/dolacz"
+                      className="mt-2 text-center px-6 py-3 rounded-xl bg-neon-yellow text-charcoal font-bold block"
                       onClick={() => setIsMobileOpen(false)}
                   >
                     Dołącz
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
           )}

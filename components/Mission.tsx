@@ -1,20 +1,21 @@
+// src/components/Mission.tsx
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Target, Zap, Heart } from 'lucide-react';
 
-// Warianty animacji dla kontenera (siatki) - odpowiadają za kaskadowe wywoływanie dzieci
+// Warianty animacji dla kontenera (siatki)
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3, // Opóźnienie między pojawieniem się kolejnych kart
+      staggerChildren: 0.3,
       delayChildren: 0.2
     }
   }
 };
 
-// Warianty animacji dla pojedynczego elementu
+// Warianty animacji dla pojedynczego elementu (wejście)
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -34,18 +35,27 @@ const MissionItem: React.FC<{
 }> = ({ icon, title, desc }) => {
   return (
       <motion.div
-          variants={itemVariants} // Przypisujemy wariant elementu
-          className="flex flex-col items-center text-center p-8 rounded-2xl glass-panel hover:bg-white/5 transition-colors group interactive"
+          variants={itemVariants}
+          // Klasa 'group' jest tutaj kluczowa dla działania group-hover na dzieciach
+          className="flex flex-col items-center text-center p-8 rounded-2xl glass-panel hover:bg-white/5 transition-all duration-300 group interactive h-full justify-start"
       >
-        <div className="mb-6 p-4 rounded-full bg-charcoal-light border border-white/10 text-neon-yellow group-hover:scale-110 group-hover:text-neon-blue transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+        <div className="mb-6 p-4 rounded-full bg-charcoal-light border border-white/10 text-neon-yellow group-hover:scale-110 group-hover:text-neon-blue transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)] shrink-0">
           {icon}
         </div>
-        <h3 className="text-2xl font-display font-bold mb-4 text-white group-hover:text-neon-yellow transition-colors">
+        <h3 className="text-2xl font-display font-bold mb-2 text-white group-hover:text-neon-yellow transition-colors shrink-0">
           {title}
         </h3>
-        <p className="text-gray-400 leading-relaxed">
+
+        {/* --- ZMIANA TUTAJ --- */}
+        {/* Opis jest domyślnie ukryty (opacity-0, h-0) i pojawia się po najechaniu na grupę */}
+        <p className="text-gray-400 leading-relaxed
+                    opacity-0 translate-y-4 h-0 overflow-hidden mt-0
+                    group-hover:opacity-100 group-hover:translate-y-0 group-hover:h-auto group-hover:mt-4
+                    transition-all duration-500 ease-in-out">
           {desc}
         </p>
+        {/* ------------------- */}
+
       </motion.div>
   );
 };
@@ -72,13 +82,13 @@ export const Mission: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Grid z kartami - animowany jako całość */}
+          {/* Grid z kartami */}
           <motion.div
-              className="grid md:grid-cols-3 gap-8"
+              className="grid md:grid-cols-3 gap-8 items-start" // items-start ważne przy różnej wysokości kart
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }} // Animacja odpali się raz, gdy element wejdzie w widok
+              viewport={{ once: true, margin: "-50px" }}
           >
             <MissionItem
                 icon={<Zap size={32} />}

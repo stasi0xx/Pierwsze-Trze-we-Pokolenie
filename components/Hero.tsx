@@ -103,7 +103,7 @@ const HeroVisual: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
                 // ZMIANA: Zmniejszono szerokość na mobile do 'w-60', aby orbita mogła być mniejsza
-                className="relative z-10 w-60 md:w-full md:max-w-md h-auto rounded-3xl overflow-hidden border border-white/10 group shadow-2xl shadow-neon-yellow/10"
+                className="relative z-10 w-60 md:w-full md:max-w-md h-auto rounded-3xl overflow-hidden group "
             >
                 <img
                     src="/grafikaHero.png"
