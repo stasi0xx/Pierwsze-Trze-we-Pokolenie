@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
     return (
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-32 pb-16 bg-charcoal">
+        // ZMIANA: Zwiększono dolny padding na mobile (pb-44) aby zrobić miejsce na orbitujące elementy
+        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-32 pb-44 md:pb-16 bg-charcoal">
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-charcoal/50 z-0" />
 
@@ -14,7 +15,6 @@ export const Hero: React.FC = () => {
             <div className="absolute top-[20%] right-[-10%] w-[400px] h-[400px] bg-neon-blue/10 rounded-full blur-[100px] animate-blob animation-delay-2000 mix-blend-screen pointer-events-none" />
             <div className="absolute bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[120px] animate-blob animation-delay-4000 mix-blend-screen pointer-events-none" />
 
-            {/* ZMIANA: Zwiększony gap na mobile (gap-12 -> gap-16) dla wyraźnego odstępu */}
             <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-16 md:gap-12 items-center">
 
                 {/* Text Content */}
@@ -57,7 +57,6 @@ export const Hero: React.FC = () => {
                 </motion.div>
 
                 {/* Hero Image Composition */}
-                {/* ZMIANA: h-auto na mobile zamiast sztywnego h-[300px], mt-8 dla dodatkowego odstępu */}
                 <div className="relative h-auto md:h-[600px] flex items-center justify-center mt-8 md:mt-0">
                     <HeroVisual />
                 </div>
@@ -90,7 +89,7 @@ const HeroVisual: React.FC = () => {
     return (
         <div className="relative w-full h-full flex items-center justify-center perspective-1000">
 
-            {/* Dekoracyjne okręgi w tle - UKRYTE NA MOBILE (hidden md:block) */}
+            {/* Dekoracyjne okręgi w tle - UKRYTE NA MOBILE */}
             <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
@@ -102,7 +101,6 @@ const HeroVisual: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                // ZMIANA: Zmniejszono szerokość na mobile do 'w-60', aby orbita mogła być mniejsza
                 className="relative z-10 w-60 md:w-full md:max-w-md h-auto rounded-3xl overflow-hidden group "
             >
                 <img
@@ -111,12 +109,7 @@ const HeroVisual: React.FC = () => {
                     className="w-full h-auto block opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 filter grayscale-[20%]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-80" />
-
-
-
             </motion.div>
-
-
 
             {/* Kontener Orbity */}
             <motion.div
@@ -133,7 +126,8 @@ const HeroVisual: React.FC = () => {
                         }}
                     >
                         <motion.div
-                            className="bg-charcoal/90 backdrop-blur-md p-2 md:p-4 rounded-xl border border-neon-yellow/30 shadow-[0_0_15px_rgba(244,255,0,0.15)] flex flex-col items-center min-w-[70px] md:min-w-[90px]"
+                            // ZMIANA: Dodano z-50 aby badge były zawsze na wierzchu
+                            className="bg-charcoal/90 backdrop-blur-md p-2 md:p-4 rounded-xl border border-neon-yellow/30 shadow-[0_0_15px_rgba(244,255,0,0.15)] flex flex-col items-center min-w-[70px] md:min-w-[90px] z-50"
                             animate={{ rotate: -360 }}
                             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                         >
@@ -146,8 +140,8 @@ const HeroVisual: React.FC = () => {
 
             <style>{`
                 :root {
-                    /* ZMIANA: Mniejszy promień orbity na mobile (-160px) pasujący do w-60 */
-                    --orbit-radius: -160px;
+                    /* ZMIANA: Promień orbity dopasowany do w-60, tak aby badge krążyły blisko zdjęcia ale go nie zasłaniały */
+                    --orbit-radius: -145px;
                 }
                 @media (min-width: 768px) {
                     :root {

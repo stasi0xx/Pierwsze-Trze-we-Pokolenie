@@ -73,19 +73,19 @@ export const Footer: React.FC = () => {
 
               {/* Lista Social Media */}
               <div className="flex flex-wrap gap-3">
-                <a href="https://www.tiktok.com/@pierwszetrzezwepokolenie" aria-label="TikTok" className="p-2 bg-white/5 rounded-full hover:bg-[#00f2ea] hover:text-charcoal transition-colors interactive">
+                <a href="https://www.tiktok.com/@pierwszetrzezwepokolenie" target={'_blank'}  aria-label="TikTok" className="p-2 bg-white/5 rounded-full hover:bg-[#00f2ea] hover:text-charcoal transition-colors interactive">
                   <TiktokIcon size={20} />
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=61580998440256" aria-label="Facebook" className="p-2 bg-white/5 rounded-full hover:bg-[#1877F2] hover:text-white transition-colors interactive">
+                <a href="https://www.facebook.com/profile.php?id=61580998440256" target={'_blank'}  aria-label="Facebook" className="p-2 bg-white/5 rounded-full hover:bg-[#1877F2] hover:text-white transition-colors interactive">
                   <Facebook size={20} />
                 </a>
-                <a href="#" aria-label="Instagram" className="p-2 bg-white/5 rounded-full hover:bg-[#E4405F] hover:text-white transition-colors interactive">
+                <a href="https://www.instagram.com/pierwszetrzezwepokolenie/" aria-label="Instagram" target={'_blank'}  className="p-2 bg-white/5 rounded-full hover:bg-[#E4405F] hover:text-white transition-colors interactive">
                   <Instagram size={20} />
                 </a>
-                <a href="https://www.youtube.com/@PierwszeTrzeźwePokolenie" aria-label="YouTube" className="p-2 bg-white/5 rounded-full hover:bg-[#FF0000] hover:text-white transition-colors interactive">
+                <a href="https://www.youtube.com/@PierwszeTrzeźwePokolenie" target={'_blank'}  aria-label="YouTube" className="p-2 bg-white/5 rounded-full hover:bg-[#FF0000] hover:text-white transition-colors interactive">
                   <Youtube size={20} />
                 </a>
-                <a href="#" aria-label="Spotify" className="p-2 bg-white/5 rounded-full hover:bg-[#1DB954] hover:text-charcoal transition-colors interactive">
+                <a href="https://open.spotify.com/show/0ZtGsxwcT4uwZo3ZNFJpyV" target={'_blank'} aria-label="Spotify" className="p-2 bg-white/5 rounded-full hover:bg-[#1DB954] hover:text-charcoal transition-colors interactive">
                   <SpotifyIcon size={20} />
                 </a>
               </div>

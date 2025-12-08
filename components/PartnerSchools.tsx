@@ -5,10 +5,9 @@ import { supabase } from '../lib/supabase.ts'; // Upewnij się, że ścieżka im
 
 interface SchoolData {
     id: number;
-    name: string;
-    city: string;
-    website_url: string;
-    logo_url?: string;
+    szkola: string;
+    adres: string;
+    link: string;
 }
 
 export const PartnerSchools: React.FC = () => {
