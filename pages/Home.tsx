@@ -5,7 +5,7 @@ import { Mission } from '../components/Mission';
 import { About } from '../components/About';
 import { Programs } from '../components/Programs';
 import { Stories } from '../components/Stories';
-import { Donate } from '../components/Donate';
+import {Join} from "@/components/Join.tsx";
 
 export const Home: React.FC = () => {
     return (
@@ -15,6 +15,7 @@ export const Home: React.FC = () => {
             <About />
             <Programs />
             <Stories />
+            <Join />
         </>
     );
 };

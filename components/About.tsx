@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Users, Star, Award, Music, Activity, Mic } from 'lucide-react';
+import {Link} from "react-router-dom";
 
 // Warianty animacji dla kontenera (sekwencja elementów)
 const containerVariants: Variants = {
@@ -171,6 +172,15 @@ export const About: React.FC = () => {
                                     <span className="text-neon-yellow">•</span>
                                     <span>PTP</span>
                                 </div>
+                                <Link
+                                    to="/dolacz"
+                                    className="interactive group relative px-8 py-4 bg-neon-yellow text-charcoal font-bold text-lg mt-10 rounded-xl overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(244,255,0,0.4)] text-center flex items-center justify-center"
+                                >
+                            <span className="relative z-10 flex items-center gap-2">
+                                Dołącz do Ruchu
+                            </span>
+                                    <div className="absolute inset-0 bg-white/40 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                                </Link>
                             </motion.div>
                         </motion.div>
                     </div>

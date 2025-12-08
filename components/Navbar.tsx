@@ -70,7 +70,7 @@ export const Navbar: React.FC = () => {
               className="flex items-center gap-2 group interactive"
           >
             <img
-                src="/logo (2).png"
+                src="/logo.png"
                 alt="Pierwsze Trzeźwe Pokolenie"
                 className={`group-hover:scale-105 transition-all ${
                     isScrolled ? 'h-12 md:h-16' : 'h-16 md:h-20'

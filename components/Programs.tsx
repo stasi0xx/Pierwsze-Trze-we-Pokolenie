@@ -113,9 +113,6 @@ export const Programs: React.FC = () => {
                 Realizuje Naszą misję poprzez trzy strategiczne filary.
               </p>
             </div>
-            <button className="px-6 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-colors text-white font-medium interactive">
-              Zobacz harmonogram
-            </button>
           </motion.div>
 
           <motion.div
