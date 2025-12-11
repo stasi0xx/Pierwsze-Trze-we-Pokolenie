@@ -23,22 +23,7 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 1000);
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (loading) {
-        return (
-            <div className="flex h-screen w-full items-center justify-center bg-charcoal text-neon-yellow">
-                <div className="relative h-16 w-16 animate-spin rounded-full border-4 border-t-4 border-white/10 border-t-neon-yellow"></div>
-            </div>
-        );
-    }
 
     return (
         <Router>

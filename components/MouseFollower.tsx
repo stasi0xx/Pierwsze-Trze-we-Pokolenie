@@ -6,7 +6,8 @@ export const MouseFollower: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    const mouseMove = (e: MouseEvent) => {
+      if (window.matchMedia("(pointer: coarse)").matches) return;
+      const mouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: e.clientX,
         y: e.clientY
@@ -29,6 +30,10 @@ export const MouseFollower: React.FC = () => {
       window.removeEventListener("mouseover", handleMouseOver);
     };
   }, []);
+
+    if (typeof window !== 'undefined' && window.matchMedia("(pointer: coarse)").matches) {
+        return null;
+    }
 
   return (
     <motion.div

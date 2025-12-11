@@ -70,9 +70,11 @@ export const Navbar: React.FC = () => {
               className="flex items-center gap-2 group interactive"
           >
             <img
-                src="/logo.png"
+                src="/logo.webp" // Zmień na webp
                 alt="Pierwsze Trzeźwe Pokolenie"
-                className={`group-hover:scale-105 transition-all ${
+                width="200"      // Dodaj przybliżoną szerokość oryginału
+                height="64"      // Dodaj przybliżoną wysokość oryginału
+                className={`group-hover:scale-105 transition-all w-auto ${ // w-auto jest ważne
                     isScrolled ? 'h-12 md:h-16' : 'h-16 md:h-20'
                 }`}
             />

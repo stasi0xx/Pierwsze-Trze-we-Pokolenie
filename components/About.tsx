@@ -99,9 +99,12 @@ export const About: React.FC = () => {
                             className="w-full lg:w-2/5 h-[600px] relative rounded-3xl overflow-hidden group shadow-2xl shadow-neon-yellow/5"
                         >
                             <img
-                                src="/Bartłomej.jpg"
+                                src="/Bartłomej.webp" // Zmień na webp
                                 alt="Bartłomiej Glinka"
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale-[10%] group-hover:grayscale-0"
+                                width="600"           // Dodaj wymiary oryginału
+                                height="800"
+                                loading="lazy"        // KLUCZOWE DLA WYDAJNOŚCI
+                                className="absolute inset-0 w-full h-full object-cover ..."
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent opacity-90" />
 

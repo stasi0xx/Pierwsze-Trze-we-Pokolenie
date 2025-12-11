@@ -45,9 +45,18 @@ body {
 /* Custom Classes */
 .glass-panel {
     background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Domyślnie (mobile) mniejszy blur lub brak */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* Dopiero na desktopie pełny efekt */
+@media (min-width: 768px) {
+    .glass-panel {
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
 }
 
 .glass-card-hover:hover {
