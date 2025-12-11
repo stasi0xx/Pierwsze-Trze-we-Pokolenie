@@ -4,12 +4,14 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { MouseFollower } from './components/MouseFollower';
-import { Home } from './pages/Home';
-import { SchoolsPage } from './pages/SchoolsPage';
-import {JoinUsPage} from "@/pages/JoinUsPage.tsx";
-import {PrivacyPolicyPage} from "@/pages/PrivacyPolicyPage.tsx";
-import {RegulationsPage} from "@/pages/RegulatoinsPage.tsx";
 import {CookieConsent} from "@/components/CookieConsent.tsx";
+
+const Home = React.lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
+const SchoolsPage = React.lazy(() => import('./pages/SchoolsPage').then(module => ({ default: module.SchoolsPage })));
+const JoinUsPage = React.lazy(() => import('./pages/JoinUsPage').then(module => ({ default: module.JoinUsPage })));
+const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage').then(module => ({ default: module.PrivacyPolicyPage })));
+const RegulationsPage = React.lazy(() => import('./pages/RegulatoinsPage').then(module => ({ default: module.RegulationsPage })));
+
 
 // Komponent pomocniczy do przewijania na górę przy zmianie strony
 const ScrollToTop = () => {

@@ -104,7 +104,8 @@ const HeroVisual: React.FC = () => {
                 className="relative z-10 w-60 md:w-full md:max-w-md h-auto rounded-3xl overflow-hidden group "
             >
                 <img
-                    src="/grafikaHero.png"
+                    src="/grafikaHero.webp"
+                    fetchPriority={'high'}
                     alt="Happy group"
                     className="w-full h-auto block opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 filter grayscale-[20%]"
                 />

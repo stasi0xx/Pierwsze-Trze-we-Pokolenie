@@ -172,7 +172,6 @@ export const Footer: React.FC = () => {
                 <div className="text-xs space-y-1 pt-2 border-t border-white/10 mt-2">
                   <p><span className="text-gray-500">NIP:</span> 5842768419</p>
                   <p><span className="text-gray-500">REGON:</span> 369543418</p>
-                  <p><span className="text-gray-500">Konto:</span> <span className="font-mono text-[10px]">PL 42 1050 1764 1000 0090 3147 2583</span></p>
                 </div>
               </div>
             </div>
