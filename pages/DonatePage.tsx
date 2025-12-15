@@ -24,8 +24,8 @@ const itemVariants: Variants = {
 // Logika paska postępu (przeniesiona z components/Donate.tsx)
 const GoalTracker: React.FC = () => {
     // Wartości stałe, ale można je później pobierać np. z Supabase/API
-    const currentAmount = 75000;
-    const goalAmount = 100000;
+    const currentAmount = 300;
+    const goalAmount = 5000;
     const percentage = (currentAmount / goalAmount) * 100;
 
     return (
