@@ -38,12 +38,12 @@ export const Hero: React.FC = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <a
-                            href="#mission"
+                        <Link
+                            to="/wesprzyj"
                             className="interactive px-8 py-4 bg-transparent border border-white/20 text-white font-medium text-lg rounded-xl hover:bg-white/5 transition-all text-center flex items-center justify-center"
                         >
-                            Poznaj Misję
-                        </a>
+                            Wesprzyj nas
+                        </Link>
                         <Link
                             to="/dolacz"
                             className="interactive group relative px-8 py-4 bg-neon-yellow text-charcoal font-bold text-lg rounded-xl overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(244,255,0,0.4)] text-center flex items-center justify-center"

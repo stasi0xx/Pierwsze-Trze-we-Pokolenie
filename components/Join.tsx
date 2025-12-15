@@ -41,7 +41,16 @@ export const Join: React.FC = () => {
                 </span> uczniów
                     </h2>
 
-                    <div className="flex justify-center">
+                    <div className="flex justify-center lg:grid-cols-2 gap-6 ">
+                        <Link
+                            to="/wesprzyj"
+                            className="interactive group relative px-8 py-4 bg-neon-blue text-charcoal font-bold text-lg mt-10 rounded-xl overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(244,255,0,0.4)] text-center flex items-center justify-center w-fit"
+                        >
+                    <span className="relative z-10 flex items-center gap-2">
+                        Wesprzyj nas
+                    </span>
+                            <div className="absolute inset-0 bg-white/40 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                        </Link>
                         <Link
                             to="/dolacz"
                             className="interactive group relative px-8 py-4 bg-neon-yellow text-charcoal font-bold text-lg mt-10 rounded-xl overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(244,255,0,0.4)] text-center flex items-center justify-center w-fit"

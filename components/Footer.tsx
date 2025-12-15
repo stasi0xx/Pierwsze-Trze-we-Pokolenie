@@ -99,7 +99,7 @@ export const Footer: React.FC = () => {
                 <li><a href="#programs" className="text-gray-500 hover:text-neon-yellow transition-colors">Programy</a></li>
                 <li><a href="/szkoly" className="text-gray-500 hover:text-neon-yellow transition-colors">Szkoły Partnerskie</a></li>
                 <li><a href="#stories" className="text-gray-500 hover:text-neon-yellow transition-colors">Historie</a></li>
-                <li><a href="#donate" className="text-gray-500 hover:text-neon-yellow transition-colors">Wsparcie</a></li>
+                <li><a href="/wesprzyj" className="text-gray-500 hover:text-neon-yellow transition-colors">Wsparcie</a></li>
               </ul>
             </div>
 

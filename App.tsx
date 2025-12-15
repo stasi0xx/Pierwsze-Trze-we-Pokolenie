@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { MouseFollower } from './components/MouseFollower';
 import {CookieConsent} from "@/components/CookieConsent.tsx";
+import {DonatePage} from "@/pages/DonatePage.tsx";
 
 const Home = React.lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const SchoolsPage = React.lazy(() => import('./pages/SchoolsPage').then(module => ({ default: module.SchoolsPage })));
@@ -39,6 +40,7 @@ const App: React.FC = () => {
                         <Route path={"/dolacz"} element={<JoinUsPage/>} />
                         <Route path="/polityka-prywatnosci" element={<PrivacyPolicyPage />} />
                         <Route path={"/regulamin"} element={<RegulationsPage />} />
+                        <Route path={"/wesprzyj"} element={<DonatePage />} />
                     </Routes>
                 </main>
 

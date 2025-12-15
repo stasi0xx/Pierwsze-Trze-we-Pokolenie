@@ -23,6 +23,7 @@ export const Navbar: React.FC = () => {
     { name: 'O Nas', href: '/#about' },
     { name: 'Programy', href: '/#programs' },
     { name: 'Historie', href: '/#stories' },
+    {name: 'Wesprzyj', href: '/wesprzyj'}
   ];
 
   // Ta funkcja naprawia scrollowanie
