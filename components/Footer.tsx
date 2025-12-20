@@ -179,7 +179,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs">
-            <p>&copy; {currentYear} Fundacja Pierwsze Trzeźwe Pokolenie. Wszelkie prawa zastrzeżone.</p>
+            <p>&copy; {currentYear} Fundacja Pierwsze Trzeźwe Pokolenie. Wszelkie prawa zastrzeżone. Designe & Maintain by <a href={'https://we-unite.vercel.app/'}>WeUnite</a></p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <a href="/polityka-prywatnosci" className="hover:text-white transition-colors">Polityka Prywatności</a>
               <a href="/regulamin" className="hover:text-white transition-colors">Regulamin</a>
