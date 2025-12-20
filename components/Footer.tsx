@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Building2, CreditCard, Copy, Check } from 'lucide-react';
+import {
+  Facebook,
+  Instagram,
+  Youtube,
+  Mail,
+  Phone,
+  MapPin,
+  Building2,
+  CreditCard,
+  Copy,
+  Check,
+  Image
+} from 'lucide-react';
 
 // Ikona TikTok (Custom SVG)
 const TiktokIcon = ({ size = 20, className = "" }: { size?: number, className?: string }) => (
@@ -178,8 +190,33 @@ export const Footer: React.FC = () => {
 
           </div>
 
+          {/* ... reszta kodu wyżej ... */}
+
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs">
-            <p>&copy; {currentYear} Fundacja Pierwsze Trzeźwe Pokolenie. Wszelkie prawa zastrzeżone. Designe & Maintain by <a href={'https://we-unite.vercel.app/'}>WeUnite</a></p>
+            <div className="flex flex-wrap justify-center md:justify-start items-center gap-1">
+              <p>© {currentYear} Fundacja Pierwsze Trzeźwe Pokolenie. Wszelkie prawa zastrzeżone.</p>
+              <span className="hidden md:inline">|</span>
+              <div className="flex items-center gap-1">
+                Design & Maintain by
+                <a
+                    href="https://we-unite.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 hover:text-white transition-colors ml-1 group"
+                >
+                  WeUnite
+                  {/* Obrazek wewnątrz flexa będzie wyśrodkowany dzięki items-center w rodzicu */}
+                  <img
+                      src="/logo.png"
+                      width={40}
+                      height={20}
+                      alt="WeUnite"
+                      className="opacity-80 group-hover:opacity-100 transition-opacity object-contain"
+                  />
+                </a>
+              </div>
+            </div>
+
             <div className="flex gap-6 mt-4 md:mt-0">
               <a href="/polityka-prywatnosci" className="hover:text-white transition-colors">Polityka Prywatności</a>
               <a href="/regulamin" className="hover:text-white transition-colors">Regulamin</a>
