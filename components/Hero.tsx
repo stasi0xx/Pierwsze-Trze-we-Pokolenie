@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
                     </h1>
 
                     <p className="text-gray-400 text-base md:text-xl mb-8 max-w-lg leading-relaxed">
-                        W świecie pełnym uzależnień dajemy młodym ludziom kompas. Zamiast używek oferujemy pasję, rozwój i drogę do sukcesu.
+                        W świecie pełnym toksycznych używek dajemy młodym ludziom kompas i przykład. Zamiast używek oferujemy rozwój i drogę do sukcesu. Wolność w pełnej mocy, bez podążania za tłumem.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
