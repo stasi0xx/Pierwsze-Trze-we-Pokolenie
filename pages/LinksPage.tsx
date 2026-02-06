@@ -43,9 +43,9 @@ export const LinksPage = () => {
             description: 'Obserwuj nas na bieżąco'
         },
         {
-            name: 'https://open.spotify.com/show/0ZtGsxwcT4uwZo3ZNFJpyV',
+            name: 'Spotify',
             icon: Music,
-            url: 'https://spotify.com',
+            url: 'https://open.spotify.com/show/0ZtGsxwcT4uwZo3ZNFJpyV',
             className: 'bg-gradient-to-br from-[#1DB954] to-[#1ed760] shadow-[0_0_20px_rgba(29,185,84,0.4)] border-[#1DB954]',
             description: 'Posłuchaj naszych podcastów'
         }
