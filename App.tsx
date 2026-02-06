@@ -4,14 +4,15 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { MouseFollower } from './components/MouseFollower';
-import {CookieConsent} from "@/components/CookieConsent.tsx";
-import {DonatePage} from "@/pages/DonatePage.tsx";
+import { CookieConsent } from "@/components/CookieConsent.tsx";
+import { DonatePage } from "@/pages/DonatePage.tsx";
 
 const Home = React.lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const SchoolsPage = React.lazy(() => import('./pages/SchoolsPage').then(module => ({ default: module.SchoolsPage })));
 const JoinUsPage = React.lazy(() => import('./pages/JoinUsPage').then(module => ({ default: module.JoinUsPage })));
 const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage').then(module => ({ default: module.PrivacyPolicyPage })));
 const RegulationsPage = React.lazy(() => import('./pages/RegulatoinsPage').then(module => ({ default: module.RegulationsPage })));
+const LinksPage = React.lazy(() => import('./pages/LinksPage').then(module => ({ default: module.LinksPage })));
 
 
 // Komponent pomocniczy do przewijania na górę przy zmianie strony
@@ -37,10 +38,11 @@ const App: React.FC = () => {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/szkoly" element={<SchoolsPage />} />
-                        <Route path={"/dolacz"} element={<JoinUsPage/>} />
+                        <Route path={"/dolacz"} element={<JoinUsPage />} />
                         <Route path="/polityka-prywatnosci" element={<PrivacyPolicyPage />} />
                         <Route path={"/regulamin"} element={<RegulationsPage />} />
                         <Route path={"/wesprzyj"} element={<DonatePage />} />
+                        <Route path={"/linki"} element={<LinksPage />} />
                     </Routes>
                 </main>
 
