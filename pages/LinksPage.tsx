@@ -31,19 +31,19 @@ export const LinksPage = () => {
         {
             name: 'YouTube',
             icon: Youtube,
-            url: 'https://youtube.com',
+            url: 'https://www.youtube.com/@PierwszeTrze%C5%BAwePokolenie',
             className: 'bg-gradient-to-br from-[#FF0000] to-[#cc0000] shadow-[0_0_20px_rgba(255,0,0,0.4)] border-[#FF0000]',
             description: 'Subskrybuj nasz kanał'
         },
         {
             name: 'Instagram',
             icon: Instagram,
-            url: 'https://instagram.com',
+            url: 'https://www.instagram.com/pierwszetrzezwepokolenie/',
             className: 'bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] shadow-[0_0_20px_rgba(225,48,108,0.4)] border-[#fd1d1d]',
             description: 'Obserwuj nas na bieżąco'
         },
         {
-            name: 'Spotify',
+            name: 'https://open.spotify.com/show/0ZtGsxwcT4uwZo3ZNFJpyV',
             icon: Music,
             url: 'https://spotify.com',
             className: 'bg-gradient-to-br from-[#1DB954] to-[#1ed760] shadow-[0_0_20px_rgba(29,185,84,0.4)] border-[#1DB954]',
