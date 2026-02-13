@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Youtube, Instagram, Music, ArrowRight, UserPlus } from 'lucide-react';
+import { Youtube, Instagram, Music, ArrowRight, UserPlus, Video } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const LinksPage = () => {
@@ -48,6 +48,13 @@ export const LinksPage = () => {
             url: 'https://open.spotify.com/show/0ZtGsxwcT4uwZo3ZNFJpyV',
             className: 'bg-gradient-to-br from-[#1DB954] to-[#1ed760] shadow-[0_0_20px_rgba(29,185,84,0.4)] border-[#1DB954]',
             description: 'Posłuchaj naszych podcastów'
+        },
+        {
+            name: 'TikTok',
+            icon: Video,
+            url: 'https://www.tiktok.com/@pierwszetrzezwepokolenie',
+            className: 'bg-gradient-to-br from-[#000000] to-[#25F4EE] shadow-[0_0_20px_rgba(37,244,238,0.4)] border-[#25F4EE]',
+            description: 'Oglądaj nasze filmy'
         }
     ];
 
@@ -78,7 +85,7 @@ export const LinksPage = () => {
                 </motion.div>
 
                 {/* Social Links */}
-                <div className="flex flex-col gap-4">
+                <div className="grid grid-cols-2 gap-4">
                     {links.map((link) => (
                         <motion.a
                             key={link.name}
@@ -86,12 +93,12 @@ export const LinksPage = () => {
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`group relative flex items-center p-4 rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:brightness-110 ${link.className}`}
+                            className={`group relative flex items-center justify-center md:justify-start p-4 rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:brightness-110 ${link.className}`}
                         >
-                            <div className="p-3 rounded-xl bg-white/20 text-white mr-4 backdrop-blur-sm shadow-inner">
+                            <div className="p-3 rounded-xl bg-white/20 text-white md:mr-4 backdrop-blur-sm shadow-inner flex-shrink-0">
                                 <link.icon size={26} strokeWidth={2} />
                             </div>
-                            <div className="flex-1">
+                            <div className="flex-1 hidden md:block">
                                 <h3 className="text-xl font-bold text-white drop-shadow-md">
                                     {link.name}
                                 </h3>
@@ -99,7 +106,7 @@ export const LinksPage = () => {
                                     {link.description}
                                 </p>
                             </div>
-                            <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
+                            <div className="hidden md:block opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
                                 <div className="bg-white/20 p-2 rounded-full">
                                     <ArrowRight className="text-white" size={20} />
                                 </div>
