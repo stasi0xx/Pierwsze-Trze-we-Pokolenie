@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { MouseFollower } from './components/MouseFollower';
 import { CookieConsent } from "@/components/CookieConsent.tsx";
 import { DonatePage } from "@/pages/DonatePage.tsx";
+import { AmbassadorsPage } from './pages/AmbassadorsPage';
 
 const Home = React.lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const SchoolsPage = React.lazy(() => import('./pages/SchoolsPage').then(module => ({ default: module.SchoolsPage })));
@@ -43,6 +44,8 @@ const App: React.FC = () => {
                         <Route path={"/regulamin"} element={<RegulationsPage />} />
                         <Route path={"/wesprzyj"} element={<DonatePage />} />
                         <Route path={"/linki"} element={<LinksPage />} />
+                        <Route path={"/ambasadorzy"} element={<AmbassadorsPage />} />
+
                     </Routes>
                 </main>
 
