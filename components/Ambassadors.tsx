@@ -22,11 +22,21 @@ const ambassadors: Ambassador[] = [
     achievements: [
       'Autor podcastu „Wygrywanie”',
       'wspierający liderów w odzyskiwaniu kontroli nad umysłem i wynikami w biznesie.',
-
     ],
     accentColor: 'yellow',
   },
-
+  {
+    id: 2,
+    firstName: 'Łukasz',
+    lastName: 'Tchórzewski',
+    role: 'Ambasador Fundacji',
+    photo: '/lukasz-tchorzewski.jpg',
+    achievements: [
+      'Autor książki „Nie pij dziś”, promującej świadome i trzeźwe życie, sprzedanej w nakładzie ponad 20 000 egzemplarzy.',
+      'Jeden z najpopularniejszych sober influencerów w Polsce — jego materiały osiągnęły setki milionów wyświetleń w mediach społecznościowych.',
+    ],
+    accentColor: 'green',
+  },
 ];
 
 const accentMap: Record<string, { border: string; text: string; glow: string; badge: string }> = {
