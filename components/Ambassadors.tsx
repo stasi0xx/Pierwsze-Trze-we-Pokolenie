@@ -37,6 +37,18 @@ const ambassadors: Ambassador[] = [
     ],
     accentColor: 'green',
   },
+  {
+    id: 3,
+    firstName: 'Mateusz',
+    lastName: 'Kusznierewicz',
+    role: 'Ambasador Fundacji',
+    photo: '/mateusz-kusznierewicz.jpeg',
+    achievements: [
+      'Mistrz olimpijski i wielokrotny mistrz świata, jeden z najbardziej utytułowanych polskich żeglarzy, który swoją imponującą karierę zbudował na dyscyplinie i świadomym podejściu do treningu.',
+      'Aktywny promotor zdrowego stylu życia i twórca projektu Power Walk, który inspiruje do budowania trwałych nawyków, dbania o kondycję psychiczną oraz osiągania długofalowych sukcesów bez używek.',
+    ],
+    accentColor: 'blue',
+  },
 ];
 
 const accentMap: Record<string, { border: string; text: string; glow: string; badge: string }> = {
