@@ -9,20 +9,21 @@ export const LinksPage = () => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.3
+                staggerChildren: 0.03,
+                delayChildren: 0
             }
         }
     };
 
     const itemVariants = {
-        hidden: { y: 20, opacity: 0 },
+        hidden: { y: 10, opacity: 0 },
         visible: {
             y: 0,
             opacity: 1,
             transition: {
                 type: "spring" as const,
-                stiffness: 100
+                stiffness: 300,
+                damping: 25
             }
         }
     };
