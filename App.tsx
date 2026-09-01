@@ -5,8 +5,6 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { MouseFollower } from './components/MouseFollower';
 import { CookieConsent } from "@/components/CookieConsent.tsx";
-import { DonatePage } from "@/pages/DonatePage.tsx";
-import { AmbassadorsPage } from './pages/AmbassadorsPage';
 
 const Home = React.lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const SchoolsPage = React.lazy(() => import('./pages/SchoolsPage').then(module => ({ default: module.SchoolsPage })));
@@ -14,6 +12,8 @@ const JoinUsPage = React.lazy(() => import('./pages/JoinUsPage').then(module => 
 const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage').then(module => ({ default: module.PrivacyPolicyPage })));
 const RegulationsPage = React.lazy(() => import('./pages/RegulatoinsPage').then(module => ({ default: module.RegulationsPage })));
 const LinksPage = React.lazy(() => import('./pages/LinksPage').then(module => ({ default: module.LinksPage })));
+const DonatePage = React.lazy(() => import('./pages/DonatePage').then(module => ({ default: module.DonatePage })));
+const AmbassadorsPage = React.lazy(() => import('./pages/AmbassadorsPage').then(module => ({ default: module.AmbassadorsPage })));
 
 const PageLoader = () => (
     <div

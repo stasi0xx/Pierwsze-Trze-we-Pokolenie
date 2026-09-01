@@ -207,7 +207,7 @@ export const Footer: React.FC = () => {
                   WeUnite
                   {/* Obrazek wewnątrz flexa będzie wyśrodkowany dzięki items-center w rodzicu */}
                   <img
-                      src="/logo.png"
+                      src="/logo.webp"
                       width={40}
                       height={20}
                       alt="WeUnite"
