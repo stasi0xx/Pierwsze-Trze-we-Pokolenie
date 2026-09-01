@@ -18,7 +18,7 @@ const ambassadors: Ambassador[] = [
     firstName: 'Marcin',
     lastName: 'Sochacki',
     role: 'Ambasador Fundacji',
-    photo: '/marcin-sochacki.png',
+    photo: '/marcin-sochacki.webp',
     achievements: [
       'Autor podcastu „Wygrywanie”',
       'wspierający liderów w odzyskiwaniu kontroli nad umysłem i wynikami w biznesie.',
@@ -30,7 +30,7 @@ const ambassadors: Ambassador[] = [
     firstName: 'Łukasz',
     lastName: 'Tchórzewski',
     role: 'Ambasador Fundacji',
-    photo: '/lukasz-tchorzewski.jpg',
+    photo: '/lukasz-tchorzewski.webp',
     achievements: [
       'Autor książki „Nie pij dziś”, promującej świadome i trzeźwe życie, sprzedanej w nakładzie ponad 20 000 egzemplarzy.',
       'Jeden z najpopularniejszych sober influencerów w Polsce — jego materiały osiągnęły setki milionów wyświetleń w mediach społecznościowych.',
@@ -42,7 +42,7 @@ const ambassadors: Ambassador[] = [
     firstName: 'Mateusz',
     lastName: 'Kusznierewicz',
     role: 'Ambasador Fundacji',
-    photo: '/mateusz-kusznierewicz.jpeg',
+    photo: '/mateusz-kusznierewicz.webp',
     achievements: [
       'Mistrz olimpijski i wielokrotny mistrz świata, jeden z najbardziej utytułowanych polskich żeglarzy, który swoją imponującą karierę zbudował na dyscyplinie i świadomym podejściu do treningu.',
       'Aktywny promotor zdrowego stylu życia i twórca projektu Power Walk, który inspiruje do budowania trwałych nawyków, dbania o kondycję psychiczną oraz osiągania długofalowych sukcesów bez używek.',
@@ -128,6 +128,10 @@ export const Ambassadors: React.FC = () => {
                       <img
                         src={person.photo}
                         alt={`${person.firstName} ${person.lastName}`}
+                        width={160}
+                        height={160}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full rounded-full object-cover object-top"
                         onError={(e) => {
                           const target = e.currentTarget;

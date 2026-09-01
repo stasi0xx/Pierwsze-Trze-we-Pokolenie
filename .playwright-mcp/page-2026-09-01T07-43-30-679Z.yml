@@ -1,0 +1,91 @@
+- generic [ref=f1e3]:
+  - navigation [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - link [ref=f1e6] [cursor=pointer]:
+        - /url: /
+        - img "Pierwsze Trzeźwe Pokolenie" [ref=f1e7]
+      - generic [ref=f1e8]:
+        - button "Lista Szkół Partnerskich" [ref=f1e9] [cursor=pointer]
+        - button "Misja" [ref=f1e10] [cursor=pointer]
+        - button "O Nas" [ref=f1e11] [cursor=pointer]
+        - button "Programy" [ref=f1e12] [cursor=pointer]
+        - button "Historie" [ref=f1e13] [cursor=pointer]
+        - button "Wesprzyj" [ref=f1e14] [cursor=pointer]
+        - button "Ambasadorzy" [ref=f1e15] [cursor=pointer]
+        - link "Dołącz" [ref=f1e16] [cursor=pointer]:
+          - /url: /dolacz
+  - main [ref=f1e17]:
+    - status [ref=f1e18]:
+      - paragraph [ref=f1e21]: Ładowanie strony…
+  - contentinfo [ref=f1e22]:
+    - generic [ref=f1e23]:
+      - generic [ref=f1e24]:
+        - generic [ref=f1e25]:
+          - heading "PTP" [level=3] [ref=f1e26]
+          - paragraph [ref=f1e27]: Fundacja "Pierwsze Trzeźwe Pokolenie". Budujemy przyszłość opartą na świadomości, pasji i autentyczności.
+          - generic [ref=f1e28]:
+            - link "TikTok" [ref=f1e29] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@pierwszetrzezwepokolenie
+            - link "Facebook" [ref=f1e32] [cursor=pointer]:
+              - /url: https://www.facebook.com/profile.php?id=61580998440256
+            - link "Instagram" [ref=f1e35] [cursor=pointer]:
+              - /url: https://www.instagram.com/pierwszetrzezwepokolenie/
+            - link "YouTube" [ref=f1e39] [cursor=pointer]:
+              - /url: https://www.youtube.com/@PierwszeTrzeźwePokolenie
+            - link "Spotify" [ref=f1e43] [cursor=pointer]:
+              - /url: https://open.spotify.com/show/0ZtGsxwcT4uwZo3ZNFJpyV
+        - generic [ref=f1e49]:
+          - heading "Nawigacja" [level=4] [ref=f1e50]
+          - list [ref=f1e51]:
+            - listitem [ref=f1e52]:
+              - link "Misja" [ref=f1e53] [cursor=pointer]:
+                - /url: "#mission"
+            - listitem [ref=f1e54]:
+              - link "Programy" [ref=f1e55] [cursor=pointer]:
+                - /url: "#programs"
+            - listitem [ref=f1e56]:
+              - link "Szkoły Partnerskie" [ref=f1e57] [cursor=pointer]:
+                - /url: /szkoly
+            - listitem [ref=f1e58]:
+              - link "Historie" [ref=f1e59] [cursor=pointer]:
+                - /url: "#stories"
+            - listitem [ref=f1e60]:
+              - link "Wsparcie" [ref=f1e61] [cursor=pointer]:
+                - /url: /wesprzyj
+        - generic [ref=f1e62]:
+          - heading "Kontakt PTP" [level=4] [ref=f1e63]
+          - list [ref=f1e64]:
+            - listitem [ref=f1e65]:
+              - link "biuro@pierwszetrzezwepokolenie.pl" [ref=f1e69] [cursor=pointer]:
+                - /url: mailto:biuro@pierwszetrzezwepokolenie.pl
+            - listitem [ref=f1e70]:
+              - link "+48 517 642 587" [ref=f1e73] [cursor=pointer]:
+                - /url: tel:+48517642587
+            - listitem [ref=f1e74]:
+              - generic [ref=f1e75]: "Konto do wpłat:"
+              - button "49 1050 1764 1000 0090 8133 8411" [ref=f1e79] [cursor=pointer]
+        - generic [ref=f1e85]:
+          - heading "Organ Zarządzający" [level=4] [ref=f1e86]
+          - generic [ref=f1e87]:
+            - generic [ref=f1e93]:
+              - paragraph [ref=f1e94]: Fundacja Columbus
+              - paragraph [ref=f1e95]: "KRS: 0000719970"
+            - paragraph [ref=f1e100]: Al. Grunwaldzka 472C80-309 Gdańsk
+            - generic [ref=f1e101]:
+              - paragraph [ref=f1e102]: "NIP: 5842768419"
+              - paragraph [ref=f1e103]: "REGON: 369543418"
+      - generic [ref=f1e104]:
+        - generic [ref=f1e105]:
+          - paragraph [ref=f1e106]: © 2026 Fundacja Pierwsze Trzeźwe Pokolenie. Wszelkie prawa zastrzeżone.
+          - generic [ref=f1e107]: "|"
+          - generic [ref=f1e108]:
+            - text: Design & Maintain by
+            - link [ref=f1e109] [cursor=pointer]:
+              - /url: https://we-unite.vercel.app/
+              - text: WeUnite
+              - img "WeUnite" [ref=f1e110]
+        - generic [ref=f1e111]:
+          - link "Polityka Prywatności" [ref=f1e112] [cursor=pointer]:
+            - /url: /polityka-prywatnosci
+          - link "Regulamin" [ref=f1e113] [cursor=pointer]:
+            - /url: /regulamin

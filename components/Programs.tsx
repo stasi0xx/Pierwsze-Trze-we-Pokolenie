@@ -51,6 +51,8 @@ const ProgramCard: React.FC<{
           <img
               src={image}
               alt={title}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50"
           />
           {/* Dark Overlay for readability */}
@@ -128,7 +130,7 @@ export const Programs: React.FC = () => {
                 description="Szkoła inna niż wszystkie. Miejsce, gdzie edukacja akademicka spotyka się z formacją charakteru. Kształcimy przyszłe elity w oparciu o wartości."
                 gradient="from-neon-yellow to-orange-500"
                 link={"https://www.liceumcolumbus.pl/"}
-                image="/columbus.png"
+                image="/columbus.webp"
             />
             <ProgramCard
                 category="Mentoring"
