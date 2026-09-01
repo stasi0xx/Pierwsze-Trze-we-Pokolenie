@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oferta współpracy — Pierwsze Trzeźwe Pokolenie</title>
+  <style>
+    :root {
+      --navy: #0b1728;
+      --navy-2: #132238;
+      --ink: #15233a;
+      --muted: #687386;
+      --amber: #e3a83b;
+      --amber-dark: #c8871d;
+      --ivory: #f7f4ee;
+      --white: #ffffff;
+      --pale-blue: #e7eef7;
+      --pale-amber: #fbf0da;
+      --line: #ddd8cf;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      background: #dfe3e8;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .document {
+      display: grid;
+      gap: 24px;
+      justify-content: center;
+      padding: 28px 0;
+    }
+
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      background: var(--ivory);
+      box-shadow: 0 18px 55px rgba(13, 24, 39, .18);
+    }
+
+    .page-inner {
+      height: 100%;
+      padding: 16mm 19mm 15mm;
+    }
+
+    .header,
+    .footer {
+      position: absolute;
+      left: 19mm;
+      right: 19mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 7.5pt;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .header {
+      top: 9mm;
+      padding-bottom: 3.5mm;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header strong { color: var(--ink); }
+
+    .footer {
+      bottom: 7mm;
+      padding-top: 3mm;
+      border-top: 1px solid var(--line);
+      text-transform: none;
+    }
+
+    .content { padding-top: 13mm; }
+
+    .kicker {
+      margin: 0 0 6mm;
+      color: var(--amber-dark);
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 170mm;
+      margin-bottom: 4mm;
+      color: var(--ink);
+      font-size: 31pt;
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -.02em;
+    }
+
+    h2 {
+      margin-bottom: 4mm;
+      color: var(--ink);
+      font-size: 17pt;
+      line-height: 1.15;
+    }
+
+    .amber-rule {
+      width: 18mm;
+      height: 1.4mm;
+      margin: 7mm 0 7mm;
+      border-radius: 99px;
+      background: var(--amber);
+    }
+
+    .lead {
+      margin-bottom: 7mm;
+      font-size: 11.5pt;
+      line-height: 1.45;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 7mm;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .stat {
+      min-height: 25mm;
+      padding: 5mm 4.5mm;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.68);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 4mm;
+      font-size: 17pt;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+
+    .scope-list {
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .scope-row {
+      display: grid;
+      grid-template-columns: 20mm 1fr;
+      min-height: 25mm;
+    }
+
+    .scope-no,
+    .scope-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .scope-no {
+      align-items: center;
+      color: var(--amber-dark);
+      background: rgba(255,255,255,.62);
+      font-size: 13pt;
+      font-weight: 700;
+    }
+
+    .scope-row:first-child .scope-no { background: var(--pale-amber); }
+
+    .scope-copy { padding: 4.5mm 5mm; background: rgba(255,255,255,.62); }
+    .scope-copy h3 { margin: 0 0 2mm; font-size: 11.5pt; }
+    .scope-copy p { margin: 0; color: var(--muted); font-size: 8.6pt; line-height: 1.4; }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 2mm;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .process-step {
+      min-height: 34mm;
+      padding: 5mm;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.68);
+    }
+
+    .process-step .num {
+      margin-bottom: 4mm;
+      color: var(--amber-dark);
+      font-size: 8pt;
+      font-weight: 700;
+    }
+
+    .process-step h3 { margin: 0 0 2mm; font-size: 11pt; }
+    .process-step p { margin: 0; color: var(--muted); font-size: 8.5pt; line-height: 1.35; }
+
+    .dependency {
+      margin-bottom: 7mm;
+      color: var(--muted);
+      font-size: 8.8pt;
+      line-height: 1.4;
+    }
+
+    .price-box {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      min-height: 33mm;
+      margin-bottom: 7mm;
+      border: 1px solid #d2ddeb;
+      background: var(--pale-blue);
+    }
+
+    .price-copy,
+    .price-value {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5mm 6mm;
+    }
+
+    .price-value {
+      align-items: flex-end;
+      border-left: 1px solid #d2ddeb;
+    }
+
+    .price-label {
+      margin-bottom: 3mm;
+      color: var(--amber-dark);
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .price-copy p { margin: 0; font-size: 10pt; }
+    .price-value strong { font-size: 25pt; font-weight: 300; }
+    .price-value span { margin-top: 2mm; color: var(--muted); font-size: 7.5pt; font-weight: 700; text-transform: uppercase; }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 6mm;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .included-item {
+      min-height: 27mm;
+      padding: 4mm;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.68);
+    }
+
+    .included-item strong {
+      display: block;
+      margin-bottom: 3mm;
+      color: var(--amber-dark);
+      font-size: 7.5pt;
+      text-transform: uppercase;
+    }
+
+    .included-item p { margin: 0; font-size: 8.8pt; line-height: 1.35; }
+
+    .note {
+      margin-bottom: 7mm;
+      padding: 5mm 6mm;
+      border-left: 2mm solid var(--amber-dark);
+      border-radius: 0 4mm 4mm 0;
+      background: var(--pale-amber);
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 2mm;
+      color: var(--amber-dark);
+      font-size: 7.5pt;
+      text-transform: uppercase;
+    }
+
+    .note p { margin: 0; font-size: 8.8pt; line-height: 1.45; }
+
+    .next-step h2 { margin-bottom: 3mm; }
+    .next-step p { margin-bottom: 5mm; font-size: 10.2pt; line-height: 1.4; }
+
+    .cta {
+      padding: 5mm 7mm;
+      color: var(--white);
+      background: var(--navy);
+      text-align: center;
+      font-size: 10.5pt;
+      font-weight: 700;
+    }
+
+    .cover {
+      color: var(--white);
+      background-color: var(--navy);
+      background-image: repeating-linear-gradient(
+        to right,
+        transparent 0,
+        transparent calc(20% - 1px),
+        rgba(255,255,255,.07) calc(20% - 1px),
+        rgba(255,255,255,.07) 20%
+      );
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 7mm;
+      background: var(--amber);
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 76mm;
+      background: rgba(255,255,255,.025);
+    }
+
+    .cover-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 0 19mm 17mm;
+    }
+
+    .cover-brand {
+      margin-top: 84mm;
+      margin-bottom: 9mm;
+      color: var(--amber);
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+
+    .cover .kicker { margin-bottom: 7mm; color: var(--amber); }
+    .cover h1 { max-width: 175mm; margin-bottom: 7mm; color: var(--white); font-size: 32pt; line-height: 1.1; }
+    .cover-lead { max-width: 150mm; margin-bottom: auto; color: #c9d2df; font-size: 11.5pt; line-height: 1.5; }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      border-top: 1px solid #657184;
+    }
+
+    .cover-meta div { padding: 5mm 3mm 0; }
+    .cover-meta strong { display: block; margin-bottom: 3mm; font-size: 11pt; }
+    .cover-meta span { color: #aeb8c8; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; }
+
+    .page:nth-child(3) h1 { font-size: 28pt; }
+    .page:nth-child(3) .lead { margin-bottom: 5mm; }
+    .page:nth-child(3) .process-step { min-height: 31mm; padding: 4mm 5mm; }
+    .page:nth-child(3) .dependency { margin-bottom: 5mm; }
+    .page:nth-child(3) .price-box { min-height: 30mm; margin-bottom: 5mm; }
+    .page:nth-child(3) .included-grid { margin-bottom: 4mm; }
+    .page:nth-child(3) .included-item { min-height: 24mm; padding: 3.5mm 4mm; }
+    .page:nth-child(3) .note { margin-bottom: 5mm; padding: 4mm 6mm; }
+    .page:nth-child(3) .next-step p { margin-bottom: 4mm; }
+    .page:nth-child(3) .cta { padding-top: 4mm; padding-bottom: 4mm; }
+
+    @media (max-width: 850px) {
+      .document { display: block; padding: 0; }
+      .page { width: 100%; height: auto; min-height: 141.43vw; margin: 0; box-shadow: none; }
+      .page + .page { margin-top: 16px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 0; }
+      html, body { background: transparent; }
+      .document { display: block; padding: 0; }
+      .page { width: 210mm; height: 297mm; min-height: 0; margin: 0; box-shadow: none; break-inside: avoid; }
+      .page + .page { margin-top: 0; break-before: page; }
+    }
+  </style>
+</head>
+<body>
+  <main class="document">
+    <section class="page slide cover" aria-label="Okładka oferty">
+      <div class="cover-content">
+        <div class="cover-brand">Pierwsze Trzeźwe Pokolenie &nbsp;×&nbsp; We Are Night</div>
+        <div class="kicker">Oferta współpracy</div>
+        <h1>Obsługa mediów społecznościowych<br>i produkcja materiałów</h1>
+        <p class="cover-lead">Stała miesięczna obsługa: shorty, podcast, kanały, goście, grafiki i strona internetowa.</p>
+        <div class="cover-meta">
+          <div><strong>3 500 zł</strong><span>miesięcznie</span></div>
+          <div><strong>50</strong><span>shortów</span></div>
+          <div><strong>2</strong><span>podcasty</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page slide" aria-label="Zakres współpracy">
+      <div class="header"><strong>Pierwsze Trzeźwe Pokolenie</strong><span>Oferta współpracy &nbsp;/&nbsp; 2026</span></div>
+      <div class="page-inner">
+        <div class="content">
+          <p class="kicker">00 / Cel i zakres</p>
+          <h1>Co robimy w każdym miesiącu</h1>
+          <div class="amber-rule"></div>
+          <p class="lead">Celem współpracy jest zwiększanie zasięgu i rozpoznawalności projektu. Bierzemy na siebie produkcję materiałów, publikację, obsługę gości, prowadzenie kanałów i aktualizację strony.</p>
+
+          <div class="stat-grid" aria-label="Miesięczny wolumen">
+            <div class="stat"><strong>50</strong><span>shortów / mies.</span></div>
+            <div class="stat"><strong>4</strong><span>platformy</span></div>
+            <div class="stat"><strong>2</strong><span>podcasty / mies.</span></div>
+            <div class="stat"><strong>min. 2</strong><span>nowych gości</span></div>
+            <div class="stat"><strong>do 5</strong><span>grafik / mies.</span></div>
+            <div class="stat"><strong>1</strong><span>aktualna strona</span></div>
+          </div>
+
+          <h2>Zakres prac</h2>
+          <div class="scope-list">
+            <article class="scope-row">
+              <div class="scope-no">01</div>
+              <div class="scope-copy"><h3>Shorty i publikacja</h3><p>Montujemy 50 shortów z dostarczonych materiałów. Dodajemy napisy, dopasowujemy dźwięk i format. Planujemy publikację na TikToku, Instagramie, YouTube i Snapchacie.</p></div>
+            </article>
+            <article class="scope-row">
+              <div class="scope-no">02</div>
+              <div class="scope-copy"><h3>Montaż podcastu</h3><p>Montujemy 2 pełne odcinki miesięcznie: obraz, dźwięk i korekcję audio. Przygotowujemy gotowe pliki do publikacji na platformach wideo i streamingowych.</p></div>
+            </article>
+            <article class="scope-row">
+              <div class="scope-no">03</div>
+              <div class="scope-copy"><h3>Goście podcastu</h3><p>Dobieramy i pozyskujemy co najmniej 2 nowych gości miesięcznie. Prowadzimy kontakt, ustalamy terminy i koordynujemy sprawy organizacyjne.</p></div>
+            </article>
+            <article class="scope-row">
+              <div class="scope-no">04</div>
+              <div class="scope-copy"><h3>Kanały, grafiki i strona</h3><p>Prowadzimy TikToka, Instagram i YouTube, przygotowujemy do 5 grafik oraz edytujemy stronę. Dodajemy partnerów i szkoły partnerskie.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="footer"><span>Stała współpraca miesięczna &nbsp;|&nbsp; Szczegóły rozliczenia w umowie</span><strong>02</strong></div>
+    </section>
+
+    <section class="page slide" aria-label="Organizacja, cena i następny krok">
+      <div class="header"><strong>Pierwsze Trzeźwe Pokolenie</strong><span>Oferta współpracy &nbsp;/&nbsp; 2026</span></div>
+      <div class="page-inner">
+        <div class="content">
+          <p class="kicker">01 / Organizacja</p>
+          <h1>Jak wygląda współpraca</h1>
+          <div class="amber-rule"></div>
+          <p class="lead">Na początku miesiąca ustalamy harmonogram nagrań i publikacji. Następnie prowadzimy produkcję, publikację i bieżące aktualizacje.</p>
+
+          <div class="process-grid">
+            <article class="process-step"><div class="num">01</div><h3>Ustalamy plan</h3><p>Nagrania, goście, tematy i terminy publikacji.</p></article>
+            <article class="process-step"><div class="num">02</div><h3>Produkujemy</h3><p>Montujemy shorty i podcasty oraz przygotowujemy grafiki.</p></article>
+            <article class="process-step"><div class="num">03</div><h3>Publikujemy</h3><p>Prowadzimy kanały i aktualizujemy stronę.</p></article>
+          </div>
+          <p class="dependency">Po Waszej stronie: materiały źródłowe, dostępy i akceptacje. Po naszej: montaż, organizacja, publikacja i aktualizacje.</p>
+
+          <p class="kicker">02 / Cena</p>
+          <div class="price-box">
+            <div class="price-copy"><div class="price-label">Pełna miesięczna obsługa</div><p>Produkcja, publikacja, goście, kanały, grafiki i strona.</p></div>
+            <div class="price-value"><strong>3 500 zł</strong><span>miesięcznie</span></div>
+          </div>
+
+          <h2>Co obejmuje 3 500 zł miesięcznie</h2>
+          <div class="included-grid">
+            <article class="included-item"><strong>Produkcja</strong><p>50 shortów, 2 podcasty i do 5 grafik.</p></article>
+            <article class="included-item"><strong>Publikacja</strong><p>50 shortów na TikToku, Instagramie, YouTube i Snapchacie.</p></article>
+            <article class="included-item"><strong>Obsługa</strong><p>Minimum 2 nowych gości, prowadzenie kanałów i aktualizacje strony.</p></article>
+          </div>
+
+          <aside class="note"><strong>Rozliczane osobno</strong><p>Budżet reklamowy, studio, podróże, płatne licencje i większe zmiany programistyczne na stronie. Każdy taki koszt ustalamy przed realizacją.</p></aside>
+
+          <div class="next-step">
+            <h2>Następny krok</h2>
+            <p>Potwierdzamy zakres, ustalamy harmonogram nagrań i przekazujemy dostępy do kanałów oraz materiały źródłowe.</p>
+            <div class="cta">Jeśli zakres jest OK, ustalamy termin startu.</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer"><span>Stała współpraca miesięczna &nbsp;|&nbsp; Szczegóły rozliczenia w umowie</span><strong>03</strong></div>
+    </section>
+  </main>
+</body>
+</html>

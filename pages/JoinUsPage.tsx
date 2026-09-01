@@ -66,9 +66,16 @@ export const JoinUsPage: React.FC = () => {
 
             if (error) throw error;
 
-            // 3. Sukces
+            supabase.functions.invoke('sync-mailerlite', {
+                body: {
+                    email: formData.email,
+                    firstName: formData.firstName,
+                    lastName: formData.lastName,
+                },
+            }).catch(() => {});
+
             setStatus('success');
-            setFormData({ firstName: '', lastName: '', email: '', about: '' }); // Reset formularza
+            setFormData({ firstName: '', lastName: '', email: '', about: '' });
 
         } catch (error: any) {
             console.error('Błąd zapisu:', error);
